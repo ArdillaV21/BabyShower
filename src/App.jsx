@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Heart, Baby, Moon, Sun, Smartphone, Clipboard, Check } from 'lucide-react'
+import { Heart, Baby, Moon, Sun, Smartphone, Clipboard, Check, MapPin, Clock } from 'lucide-react'
 import confetti from 'canvas-confetti'
 import { supabase } from './lib/supabase'
 import GiftCard from './components/GiftCard'
@@ -222,6 +222,40 @@ export default function App() {
                 />
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Location Section */}
+        <section className="py-20 px-6 bg-white" id="ubicacion">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex justify-center gap-6 mb-8">
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-16 h-16 bg-blue-50 text-primary rounded-full flex items-center justify-center">
+                  <MapPin className="w-8 h-8" />
+                </div>
+                <p className="font-bold text-slate-900">San Miguel de Tucumán</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-16 h-16 bg-pink-50 text-secondary rounded-full flex items-center justify-center">
+                  <Clock className="w-8 h-8" />
+                </div>
+                <p className="font-bold text-slate-900">17:30 a 21:30hs</p>
+              </div>
+            </div>
+
+            <h2 className="font-display text-5xl mb-6 text-slate-900">¿Cuándo y Dónde?</h2>
+            <p className="text-2xl text-primary font-bold mb-10">
+              Sábado 14 de Marzo
+            </p>
+
+            <a
+              href="https://share.google/tysDUeuXGIRKbJNsm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all shadow-lg active:scale-95"
+            >
+              Ver ubicación en Google Maps
+            </a>
           </div>
         </section>
 
