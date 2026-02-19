@@ -296,7 +296,7 @@ export default function App() {
         {/* Footer */}
         <footer className="py-12 px-6 text-center border-t border-slate-100">
           <p className="font-display text-3xl text-primary mb-4">Máximo</p>
-          <p className="text-sm text-slate-400 italic">"Te amamos mucho... Gabi & César"</p>
+          <p className="text-sm text-slate-400 italic">"Te amamos mucho... tus papis"</p>
           <div className="mt-8 flex justify-center gap-6 opacity-30">
             <Heart className="w-5 h-5" />
             <Baby className="w-5 h-5" />
