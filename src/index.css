@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3B82F6;
+  --color-secondary: #EC4899;
+  --color-background-light: #FDFCFB;
+
+  --font-display: "Dancing Script", cursive;
+  --font-body: "Montserrat", sans-serif;
+  --font-accent: "Pacifico", cursive;
+}
+
+@layer base {
+  body {
+    @apply font-body bg-background-light text-slate-800 transition-colors duration-300;
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-pattern {
+  background-color: var(--color-background-light);
+  background-image: radial-gradient(var(--color-primary) 0.5px, transparent 0.5px), radial-gradient(var(--color-secondary) 0.5px, var(--color-background-light) 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
