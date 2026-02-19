@@ -8,26 +8,26 @@ import ReservationModal from './components/ReservationModal'
 import RSVPModal from './components/RSVPModal'
 
 const INITIAL_GIFTS = [
-  { id: 1, name: 'Bolso Maternal', description: 'Para llevar todo lo de Máximo', is_priority: true, quantity_needed: 1 },
-  { id: 2, name: 'Cambiador', description: 'Práctico y portátil', is_priority: false, quantity_needed: 1 },
-  { id: 3, name: 'Bañera', description: 'Para sus primeros baños', is_priority: true, quantity_needed: 1 },
-  { id: 4, name: 'Ositos de algodón', description: 'Ropita cómoda y suave', is_priority: false, quantity_needed: 3 },
-  { id: 5, name: 'Batitas y Medio osito', description: 'Indispensables para el día a día', is_priority: false, quantity_needed: 3 },
-  { id: 6, name: 'Manta polar', description: 'Para que no pase frío', is_priority: false, quantity_needed: 1 },
-  { id: 7, name: 'Toallón', description: 'Con capucha, 100% algodón', is_priority: false, quantity_needed: 1 },
-  { id: 8, name: 'Pañales Pequeños', description: 'Talle P', is_priority: true, quantity_needed: 10 },
-  { id: 9, name: 'Pañales Medianos', description: 'Talle M', is_priority: true, quantity_needed: 10 },
-  { id: 10, name: 'Mamadera Avent', description: 'Calidad superior para su alimentación', is_priority: false, quantity_needed: 1 },
-  { id: 11, name: 'Set de Higiene', description: 'Corta uñas, saca moco y tijera', is_priority: false, quantity_needed: 1 },
-  { id: 12, name: 'Conjunto de algodón', description: 'Buzo y pantalón suave', is_priority: false, quantity_needed: 2 },
-  { id: 13, name: 'Saca leche', description: 'Ayuda práctica para mamá', is_priority: false, quantity_needed: 1 },
-  { id: 14, name: 'Conjunto polar', description: 'Buzo y pantalón abrigado', is_priority: false, quantity_needed: 2 },
-  { id: 15, name: 'Chupete y porta chupete', description: 'Sus primeros accesorios', is_priority: false, quantity_needed: 2 },
-  { id: 16, name: 'Babero y toalla de mano', description: 'Set para comer limpio', is_priority: false, quantity_needed: 3 },
-  { id: 17, name: 'Set de Baño', description: 'Champú, crema, jabón y esponja', is_priority: false, quantity_needed: 1 },
-  { id: 18, name: 'Toallitas y óleo', description: 'Set de limpieza esencial', is_priority: true, quantity_needed: 3 },
-  { id: 19, name: 'Talco y perfume', description: 'Para que esté siempre olorosito', is_priority: false, quantity_needed: 3 },
-  { id: 20, name: 'Pañalera', description: 'Organizador de pañales', is_priority: false, quantity_needed: 1 },
+  { id: 1, name: 'Bolso Maternal', description: 'Para llevar todo lo de Máximo', is_priority: true, quantity_needed: 1, quantity_reserved: 0 },
+  { id: 2, name: 'Cambiador', description: 'Práctico y portátil', is_priority: false, quantity_needed: 1, quantity_reserved: 0 },
+  { id: 3, name: 'Bañera', description: 'Para sus primeros baños', is_priority: true, quantity_needed: 1, quantity_reserved: 0 },
+  { id: 4, name: 'Ositos de algodón', description: 'Ropita cómoda y suave', is_priority: false, quantity_needed: 3, quantity_reserved: 0 },
+  { id: 5, name: 'Batitas y Medio osito', description: 'Indispensables para el día a día', is_priority: false, quantity_needed: 3, quantity_reserved: 0 },
+  { id: 6, name: 'Manta polar', description: 'Para que no pase frío', is_priority: false, quantity_needed: 1, quantity_reserved: 0 },
+  { id: 7, name: 'Toallón', description: 'Con capucha, 100% algodón', is_priority: false, quantity_needed: 1, quantity_reserved: 0 },
+  { id: 8, name: 'Pañales Pequeños', description: 'Talle P', is_priority: true, quantity_needed: 10, quantity_reserved: 0 },
+  { id: 9, name: 'Pañales Medianos', description: 'Talle M', is_priority: true, quantity_needed: 10, quantity_reserved: 0 },
+  { id: 10, name: 'Mamadera Avent', description: 'Calidad superior para su alimentación', is_priority: false, quantity_needed: 1, quantity_reserved: 0 },
+  { id: 11, name: 'Set de Higiene', description: 'Corta uñas, saca moco y tijera', is_priority: false, quantity_needed: 1, quantity_reserved: 0 },
+  { id: 12, name: 'Conjunto de algodón', description: 'Buzo y pantalón suave', is_priority: false, quantity_needed: 2, quantity_reserved: 0 },
+  { id: 13, name: 'Saca leche', description: 'Ayuda práctica para mamá', is_priority: false, quantity_needed: 1, quantity_reserved: 0 },
+  { id: 14, name: 'Conjunto polar', description: 'Buzo y pantalón abrigado', is_priority: false, quantity_needed: 2, quantity_reserved: 0 },
+  { id: 15, name: 'Chupete y porta chupete', description: 'Sus primeros accesorios', is_priority: false, quantity_needed: 2, quantity_reserved: 0 },
+  { id: 16, name: 'Babero y toalla de mano', description: 'Set para comer limpio', is_priority: false, quantity_needed: 3, quantity_reserved: 0 },
+  { id: 17, name: 'Set de Baño', description: 'Champú, crema, jabón y esponja', is_priority: false, quantity_needed: 1, quantity_reserved: 0 },
+  { id: 18, name: 'Toallitas y óleo', description: 'Set de limpieza esencial', is_priority: true, quantity_needed: 3, quantity_reserved: 0 },
+  { id: 19, name: 'Talco y perfume', description: 'Para que esté siempre olorosito', is_priority: false, quantity_needed: 3, quantity_reserved: 0 },
+  { id: 20, name: 'Pañalera', description: 'Organizador de pañales', is_priority: false, quantity_needed: 1, quantity_reserved: 0 },
 ]
 
 export default function App() {
@@ -62,17 +62,44 @@ export default function App() {
     setIsModalOpen(true)
   }
 
-  const confirmReservation = async (giftId, userName) => {
+  const confirmReservation = async (giftId, userName, selectedQuantity) => {
     if (supabase) {
-      const { error } = await supabase
+      // Obtener el estado actual del regalo
+      const { data: currentGift } = await supabase
         .from('gifts')
-        .update({ reserved_by: userName })
+        .select('*')
         .eq('id', giftId)
+        .single()
 
-      if (error) alert('Error al reservar. Intenta de nuevo.')
+      if (currentGift) {
+        const newQuantityReserved = (currentGift.quantity_reserved || 0) + selectedQuantity
+        const currentReservedBy = currentGift.reserved_by ? currentGift.reserved_by + ', ' : ''
+        const newReservedBy = currentReservedBy + userName
+
+        const { error } = await supabase
+          .from('gifts')
+          .update({
+            reserved_by: newReservedBy,
+            quantity_reserved: newQuantityReserved
+          })
+          .eq('id', giftId)
+
+        if (error) alert('Error al reservar. Intenta de nuevo.')
+      }
     } else {
       // Mock update
-      setGifts(prev => prev.map(g => g.id === giftId ? { ...g, reserved_by: userName } : g))
+      setGifts(prev => prev.map(g => {
+        if (g.id === giftId) {
+          const newQuantityReserved = (g.quantity_reserved || 0) + selectedQuantity
+          const currentReservedBy = g.reserved_by ? g.reserved_by + ', ' : ''
+          return {
+            ...g,
+            reserved_by: currentReservedBy + userName,
+            quantity_reserved: newQuantityReserved
+          }
+        }
+        return g
+      }))
     }
 
     confetti({

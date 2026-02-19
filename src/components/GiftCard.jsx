@@ -8,7 +8,9 @@ function cn(...inputs) {
 }
 
 export default function GiftCard({ gift, onReserve }) {
-    const isReserved = !!gift.reserved_by
+    const isReserved = gift.quantity_needed > 1
+        ? (gift.quantity_reserved || 0) >= gift.quantity_needed
+        : !!gift.reserved_by
 
     const getIcon = (name) => {
         const lowercaseName = name.toLowerCase()
@@ -50,7 +52,18 @@ export default function GiftCard({ gift, onReserve }) {
             </div>
 
             <h3 className="font-bold text-lg mb-1">{gift.name}</h3>
-            <p className="text-sm text-slate-500 mb-6">{gift.description}</p>
+            <p className={cn("text-sm text-slate-500", gift.reserved_by && !isReserved ? "mb-2" : "mb-6")}>
+                {gift.description}
+            </p>
+
+            {gift.reserved_by && !isReserved && (
+                <div className="mb-6">
+                    <p className="text-[10px] uppercase font-bold text-slate-400 mb-1">Ya colaboraron:</p>
+                    <p className="text-xs text-slate-600 font-medium line-clamp-2 px-2">
+                        {gift.reserved_by}
+                    </p>
+                </div>
+            )}
 
             {isReserved ? (
                 <div className="mt-auto w-full">

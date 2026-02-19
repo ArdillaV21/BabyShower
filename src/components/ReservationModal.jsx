@@ -4,7 +4,10 @@ import { X, Heart } from 'lucide-react'
 
 export default function ReservationModal({ isOpen, onClose, gift, onConfirm }) {
     const [name, setName] = useState('')
+    const [quantity, setQuantity] = useState(1)
     const [loading, setLoading] = useState(false)
+
+    const remaining = gift ? (gift.quantity_needed - (gift.quantity_reserved || 0)) : 1
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -12,10 +15,10 @@ export default function ReservationModal({ isOpen, onClose, gift, onConfirm }) {
 
         setLoading(true)
         try {
-            await onConfirm(gift.id, name)
+            await onConfirm(gift.id, name, quantity)
 
             // Notificar por WhatsApp
-            const message = encodeURIComponent(`¡Hola! Te aviso que ya reservé "${gift.name}" para el Baby Shower de Máximo. Soy ${name}.`)
+            const message = encodeURIComponent(`¡Hola! Te aviso que ya reservé ${quantity > 1 ? `${quantity} unidades de ` : ''}"${gift.name}" para el Baby Shower de Máximo. Soy ${name}.`)
             const whatsappUrl = `https://wa.me/3814754114?text=${message}`
 
             // Pequeño delay para que se guarde bien y se vea la animación del botón si la hay
@@ -24,6 +27,7 @@ export default function ReservationModal({ isOpen, onClose, gift, onConfirm }) {
             }, 500)
 
             setName('')
+            setQuantity(1)
             onClose()
         } catch (error) {
             console.error(error)
@@ -82,6 +86,23 @@ export default function ReservationModal({ isOpen, onClose, gift, onConfirm }) {
                                     className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
                                 />
                             </div>
+
+                            {gift?.quantity_needed > 1 && (
+                                <div>
+                                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                                        ¿Cuántos vas a traer? (Quedan {remaining})
+                                    </label>
+                                    <input
+                                        required
+                                        type="number"
+                                        min="1"
+                                        max={remaining}
+                                        value={quantity}
+                                        onChange={(e) => setQuantity(parseInt(e.target.value))}
+                                        className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                                    />
+                                </div>
+                            )}
 
                             <button
                                 type="submit"
