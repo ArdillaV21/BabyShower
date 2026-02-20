@@ -276,7 +276,7 @@ export default function App() {
             </p>
 
             <a
-              href="https://share.google/tysDUeuXGIRKbJNsm"
+              href="https://maps.app.goo.gl/gwrfLbTVN796TbxZ6"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all shadow-lg active:scale-95"
